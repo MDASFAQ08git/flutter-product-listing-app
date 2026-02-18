@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'dart:convert';
 
@@ -11,39 +13,52 @@ const String productJson = '''
     "id": 1,
     "name": "Smartphone",
     "description": "High-performance smartphone",
-    "image": "https://picsum.photos/200"
+    "image": "https://picsum.photos/seed/smartphone/200"
   },
   {
     "id": 2,
     "name": "Wireless Headphones",
     "description": "Noise-cancelling audio",
-    "image": "https://picsum.photos/200"
+    "image": "https://picsum.photos/seed/headphones/200"
   },
   {
     "id": 3,
     "name": "Smartwatch",
     "description": "Fitness tracking watch",
-    "image": "https://picsum.photos/200"
+    "image": "https://picsum.photos/seed/smartwatch/200"
   },
-    {
+  {
     "id": 4,
     "name": "Laptop",
-    "description": "MOre Gaming Features",
-    "image": "https://picsum.photos/200"
+    "description": "More Gaming Features",
+    "image": "https://picsum.photos/seed/laptop/200"
   },
-    {
+  {
     "id": 5,
     "name": "Camera",
-    "description": "take High resolution pics",
-    "image": "https://picsum.photos/200"
+    "description": "Take High resolution pics",
+    "image": "https://picsum.photos/seed/camera/200"
   },
-    {
+  {
     "id": 6,
     "name": "TV",
-    "description": "42 inch OLED Tv with DOlby dual Speaker",
-    "image": "https://picsum.photos/200"
+    "description": "42 inch OLED TV with Dolby dual Speaker",
+    "image": "https://picsum.photos/seed/television/200"
+  },
+  {
+    "id": 7,
+    "name": "Tablet",
+    "description": "Android 16 tablet",
+    "image": "https://picsum.photos/seed/tablet/200"
+  },
+  {
+    "id": 8,
+    "name": "Powerbank",
+    "description": "5000mah powerbank by Redmi",
+    "image": "https://picsum.photos/seed/powerbank/200"
   }
 ]
+
 ''';
 
 class MyApp extends StatelessWidget {
@@ -52,6 +67,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: ProductListPage(),
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Colors.lightBlue[800],
+    fontFamily: 'Georgia',
+    ),
     );
   }
 }
@@ -66,8 +86,9 @@ class ProductListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Product List")),
-
+      appBar: AppBar(title: Text("Product List", 
+      style: TextStyle(color: Colors.redAccent[700],),),
+      backgroundColor: Colors.lightBlueAccent,),
       body: ListView.builder(
         itemCount: productList.length,
         itemBuilder: (context, index) {
@@ -86,8 +107,34 @@ class ProductListPage extends StatelessWidget {
           );
         },
       ),
+      floatingActionButton: FloatingActionButton(
+    onPressed: () {},
+    child: Icon(Icons.chat),
+  ),
     );
   }
+
+  void exha(){
+  try{
+  print("Enter a number");
+  int? number = int.parse(stdin.readLineSync()!);
+  print("The entered number is $number");
+  }catch(e){
+    print(Exception(e));
+  }
+}
+
+}
+
+class DataListPage extends StatelessWidget{
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Data List"),backgroundColor: const Color.fromARGB(255, 186, 16, 22),),
+    );
+  }
+
 }
 
 class Product {
