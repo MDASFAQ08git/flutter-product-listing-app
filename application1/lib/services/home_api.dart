@@ -1,8 +1,5 @@
 import 'dart:convert';
-import 'package:application1/models/dob_model.dart';
-import 'package:application1/models/location_model.dart';
 import 'package:http/http.dart' as http;
-import 'package:application1/models/UserModel.dart';
 import 'package:application1/models/home_model.dart';
 
 
@@ -18,7 +15,7 @@ final result = json['results'] as List<dynamic>;
 
 final users = result.map((e) 
 {
-  
+
 return User.fromMap(e);
 
 }).toList();

@@ -1,10 +1,6 @@
-import 'dart:convert';
-import 'dart:ui';
-import 'package:application1/models/UserModel.dart';
 import 'package:application1/models/home_model.dart';
 import 'package:application1/services/home_api.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});

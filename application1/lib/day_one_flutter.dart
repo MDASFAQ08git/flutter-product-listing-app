@@ -1,4 +1,3 @@
-import 'package:application1/index.dart';
 import 'package:flutter/material.dart';
 import 'package:application1/screens/homepage.dart';
 

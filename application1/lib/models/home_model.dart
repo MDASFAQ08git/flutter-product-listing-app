@@ -2,8 +2,6 @@ import 'package:application1/models/UserModel.dart';
 import 'package:application1/models/dob_model.dart';
 import 'package:application1/models/location_model.dart';
 import 'package:application1/models/picture_model.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 
 class User{
   final String gender;
